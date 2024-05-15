@@ -22,9 +22,9 @@ const Navbar = () => {
           <li>
             <Link to="/add">Add Product</Link>
           </li>
-          <li>
-            <Link to="/update">Update Product</Link>
-          </li>
+          {/* <li>
+            <Link to="/update/:10">Update Product</Link>
+          </li> */}
           <li>
             <Link to="/delete">Delete Product</Link>
           </li>

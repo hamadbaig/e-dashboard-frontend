@@ -20,12 +20,16 @@ const Signup = () => {
       body: JSON.stringify({ Name, email, password }),
       headers: {
         "Content-Type": "application/json",
+        authorization: JSON.parse(localStorage.getItem("token")),
       },
     });
     result = await result.json();
     console.log(result);
     localStorage.setItem("user", JSON.stringify(result));
-    if (result) {
+    if (result.auth) {
+      localStorage.setItem("user", JSON.stringify(result.result));
+      localStorage.setItem("auth", JSON.stringify(result.auth));
+
       navigate("/");
     }
   };
